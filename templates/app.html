@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            /* background: linear-gradient(135deg,#020617 100%,#0f172a 100%,#1e293b 100%);
+            background-repeat: repeat; */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 200px;
+        }
+        .card-head {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-family: sans-serif;
+            margin-top: ;
+            padding-left: 20px;
+            border: 1px solid;
+            width: 500px;
+            height: 150px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: rgba(255, 68, 0, 0.7);
+        }
+        .card-body {
+            width: 520px;
+            height: auto;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background: rgb(227, 226, 226);
+        }
+        a{
+            display: flex;
+            justify-content: end;
+            font-family: sans-serif;
+            color: rgba(106, 105, 105, 0.86);
+            text-decoration: none;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        h1{
+            font-size: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .card-mid{
+            width: 520px;
+            height: 60px;
+            background: rgb(227, 226, 226);
+            border-bottom: 1px solid rgba(106, 105, 105, 0.5);
+        }
+        .search{
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            height: 30px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid rgba(106, 105, 105, 0.5);
+        }
+        .button{
+            font-size: 15px;
+            height: 30px;
+            width: 60px;
+            border-radius: 5px;
+            border: solid rgba(255, 68, 0, 0.5);
+            color: rgba(255, 68, 0, 0.5);
+        }
+        i{
+            font-size: 20px;
+            color: rgba(255, 68, 0, 0.7);
+            margin-left: 190px;
+        }
+        .add{
+            margin-top: -50px;
+        }
+        p{
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .edit{
+            margin-top: -40px;
+        }
+        .ed{
+            margin-bottom: 20px;
+        }
+        h4{
+            margin-left: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="card-head">
+            <a href="/login/">Logout</a>
+            <h1>Welcome {{ user.USERNAME }}</h1>
+            <h3>You have {{ pending_count }} incompleted tasks</h3>
+        </div>
+        <div class="card-mid">
+            <input class="search" type="text" >
+                <input class="button" type="button" value="Search">
+                <a class="add" href="/addtask/{{ user.id }}/"><i class="fa-solid fa-plus"></i></a>
+        </div>
+        <div class="card-body">
+                {% for task in tasks %}
+            <p>{{ task.title }}</p>
+            <br>
+            <a class="edit" href="/edittask/{{ task.id }}/{{ user.id }}/"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+            <a class="ed" href="/deletetask/{{ task.id }}/{{ user.id }}/"><i class="fa-regular fa-trash-can"></i></a>
+                {% empty %}
+            <h4>No Active tasks...</h4>
+                {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
