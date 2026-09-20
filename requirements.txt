@@ -1,1 +1,1 @@
-
+I have a strong interest in Python development and web application development. I have hands-on knowledge of Python, Django, Flask, FastAPI, HTML, CSS, JavaScript, SQL, and REST APIs. I have also worked on academic and personal projects where I developed web applications and implemented backend functionality using Python and Django.
